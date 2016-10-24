@@ -2,8 +2,8 @@ require_relative 'contact'
 
 class CRM
 
-  def initialize(name)
-    @name = name
+  def initialize
+
   end
 
   def main_menu
@@ -53,7 +53,17 @@ class CRM
   end
 
   def modify_existing_contact
+    print "Input the new name: "
+    first_name = gets.chomp
 
+    print "Input the new last name: "
+    last_name = gets.chomp
+
+    print "Input the new email: "
+    email = gets.chomp
+
+    print "Input a new note: "
+    note = gets.chomp
   end
 
   def delete_contact
@@ -63,6 +73,7 @@ class CRM
   # This method should accept as an argument an array of contacts
   # and display each contact in that array
   def display_contacts
+    Contact.all
 
     # HINT: Make use of this method in the display_all_contacts and search_by_attribute methods to keep your code DRY
   end
@@ -83,3 +94,4 @@ end
 
 a_crm_app = CRM.new
 a_crm_app.main_menu
+Contact.update(first_name, last_name, email, note)
