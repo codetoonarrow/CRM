@@ -25,13 +25,17 @@ class Contact
 
   # This method should return all of the existing contacts
   def self.all
-
+    @@contacts
   end
 
   # This method should accept an id as an argument
   # and return the contact who has that id
-  def self.find
-
+  def self.find(id)
+    @@contacts.each do |contact|
+    if id == contact.id
+      return contact
+      end
+    end
   end
 
   # This method should allow you to specify
@@ -39,6 +43,7 @@ class Contact
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
   def update
+  
 
   end
 

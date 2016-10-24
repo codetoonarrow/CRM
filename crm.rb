@@ -2,7 +2,8 @@ require_relative 'contact'
 
 class CRM
 
-  def initialize
+  def initialize(name)
+    @name = name
   end
 
   def main_menu
@@ -41,10 +42,10 @@ class CRM
     print 'Enter Last Name: '
     last_name = gets.chomp
 
-    print 'Enter Email Address: '
+    print 'Enter email Address: '
     email = gets.chomp
 
-    print = 'Enter a Note'
+    print 'Enter a Note : '
     note = gets.chomp
 
     Contact.create(first_name, last_name, email, note)
