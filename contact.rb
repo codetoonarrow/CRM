@@ -1,3 +1,4 @@
+require 'pry'
 class Contact
   attr_reader :id
   attr_accessor :first_name, :last_name, :email, :note
@@ -11,6 +12,8 @@ class Contact
     @last_name = last_name
     @email = email
     @note = note
+
+
     @id = @@id
     @@id += 1
   end
@@ -43,18 +46,14 @@ class Contact
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
   def update(x, new_value)
-    if
-      x == "first name"
-      self.first_name == new_value
-    elsif
-      x == "last name"
-      self.last_name == new_value
-    elsif
-      x  == "email"
-      self.email == new_value
-    elsif
-      x == "note"
-      self.note == new_value
+    if x == "first name"
+      self.first_name = new_value
+    elsif x == "last name"
+      self.last_name = new_value
+    elsif x == "email"
+      self.email = new_value
+    elsif x == "note"
+      self.note = new_value
     end
   end
 
@@ -64,8 +63,9 @@ class Contact
   # eg. searching for 'first_name', 'Betty' should return the first contact named Betty
 
   def self.find_by(attr_name, value)
+
     @@contacts.each do |contact|
-      if attr_name == "first name" && value == contact.first_name
+      if attr_name == "first_name" && value == contact.first_name
         return contact
       elsif attr_name == "last name" && value == contact.last_name
         return contact
